@@ -1,0 +1,48 @@
+PATH
+  remote: .
+  specs:
+    dir_manifest (0.0.0)
+      activesupport
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.1.4)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    diff-lcs (1.2.5)
+    i18n (0.6.9)
+    json (1.8.1)
+    metaclass (0.0.4)
+    minitest (5.3.5)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
+    rake (10.3.2)
+    rspec (3.0.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+    rspec-core (3.0.2)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.2)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.2)
+    thread_safe (0.3.4)
+    tzinfo (1.2.1)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  dir_manifest!
+  mocha (~> 0.14)
+  rake
+  rspec
