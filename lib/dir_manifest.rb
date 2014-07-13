@@ -1,5 +1,5 @@
-class DirManifest
-  def self.hi
-    puts 'hi'
-  end
+require 'dir_manifest/digester'
+require 'dir_manifest/config'
+
+module DirManifest
 end

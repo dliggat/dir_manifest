@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple hello world gem"
   s.authors     = ["Dave Liggat"]
   s.email       = 'dliggat@gmail.com'
-  s.files       = Dir["{lib}/*.rb", "bin/*", "*.md"]   #["lib/dir_manifest.rb"]
+  s.files       = Dir["{lib}/*.rb", "bin/*", "*.md", "{lib/dir_manifest}/*.rb"]   #["lib/dir_manifest.rb"]
   s.require_paths = ["lib"]
   s.executables << 'dir_manifest'
   s.homepage    =
