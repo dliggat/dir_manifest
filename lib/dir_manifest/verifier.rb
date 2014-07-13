@@ -50,8 +50,7 @@ module DirManifest
       end
 
       entries.each do |entry|
-        full_path = File.join path, entry
-        digest    = perform_digest File.read(full_path)
+        digest    = perform_digest File.join path, entry
         unless lookup[entry] == digest
           errors.add :base, "Differing digest on #{entry}!"
           break

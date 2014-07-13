@@ -30,7 +30,7 @@ module DirManifest
       entries.each do |entry|
         file_to_digest   = File.join path, entry
         result['files'] << { 'filename' => entry,
-                             'digest'   => perform_digest(File.read(file_to_digest)) }
+                             'digest'   => perform_digest(file_to_digest) }
       end
       result
     end
@@ -48,10 +48,11 @@ module DirManifest
       end
     end
 
-    def perform_digest(bytes)
+    def perform_digest(file_name)
+      bytes = File.read file_name
       case DirManifest::Config.algorithm
       when 'sha1'
-        Digest::SHA1.hexdigest(bytes)
+        Digest::SHA1.hexdigest bytes
       else
         raise NoSuchAlgorithm.new 'unsupported algorithm'
       end

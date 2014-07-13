@@ -7,10 +7,14 @@ if ARGV[0] == 'digest'
   DirManifest::Digester.new(ARGV[1]).write_digest
 elsif ARGV[0] == 'verify'
   a = DirManifest::Verifier.new(ARGV[1])
-  puts a.valid?
-  puts a.errors.inspect
+  if a.valid?
+    puts 'VALID!'
+  else
+    puts 'INVALID!'
+    a.errors.full_messages.each do |m|
+      puts m
+    end
+  end
 else
   raise ArgumentError.new('Option not understood')
 end
-
-puts 'done!'
