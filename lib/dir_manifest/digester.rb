@@ -7,7 +7,7 @@ class NotADirectory < StandardError; end
 class NoSuchAlgorithm < StandardError; end
 
 module DirManifest
-  class Directory
+  class Digester
     attr_reader :path
 
     def initialize(path)
@@ -26,7 +26,6 @@ module DirManifest
     def digest
       result = { 'generated' => Time.now.utc.xmlschema,
                  'algorithm' => DirManifest::Config.algorithm,
-                 'count'     => entries.count,
                  'files'     => [ ] }
       entries.each do |entry|
         file_to_digest   = File.join path, entry
@@ -36,8 +35,7 @@ module DirManifest
       result
     end
 
-
-    private
+    protected
     def digest_file_name
       File.join path, DirManifest::Config.digest_file
     end

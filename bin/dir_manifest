@@ -3,4 +3,14 @@
 require 'dir_manifest'
 
 
-puts 'executable!'
+if ARGV[0] == 'digest'
+  DirManifest::Digester.new(ARGV[1]).write_digest
+elsif ARGV[0] == 'verify'
+  a = DirManifest::Verifier.new(ARGV[1])
+  puts a.valid?
+  puts a.errors.inspect
+else
+  raise ArgumentError.new('Option not understood')
+end
+
+puts 'done!'
