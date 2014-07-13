@@ -6,6 +6,7 @@ module DirManifest
     extend self
     extend Options
 
-    option :algorithm, default: 'sha1'
+    option :algorithm,   default: 'sha1'
+    option :digest_file, default: '.digest.yml'
   end
 end
