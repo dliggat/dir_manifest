@@ -2,10 +2,6 @@ require 'digest'
 require 'time'
 require 'yaml'
 
-class NoSuchDirectory < StandardError; end
-class NotADirectory < StandardError; end
-class NoSuchAlgorithm < StandardError; end
-
 module DirManifest
   class Digester
     attr_reader :path
