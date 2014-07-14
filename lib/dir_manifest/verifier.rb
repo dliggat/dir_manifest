@@ -17,8 +17,9 @@ module DirManifest
     end
 
     def digest_file_deserialized?
-      @deserialized = YAML.load_file digest_file_name
-    rescue
+      @deserialized = Psych.safe_load File.read(digest_file_name)
+    rescue => e
+      puts e
       errors.add :base, "Unable to parse #{digest_file_name}"
     end
 

@@ -1,6 +1,6 @@
 require 'digest'
+require 'psych'
 require 'time'
-require 'yaml'
 
 module DirManifest
   class Digester
@@ -14,7 +14,7 @@ module DirManifest
 
     def write_digest
       File.open(digest_file_name, 'w') do |f|
-        f.write digest.to_yaml
+        f.write Psych.dump(digest)
       end
     end
 
