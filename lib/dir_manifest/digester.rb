@@ -49,7 +49,7 @@ module DirManifest
       when 'sha1'
         Digest::SHA1.hexdigest bytes
       else
-        raise NoSuchAlgorithm.new 'unsupported algorithm'
+        raise UnsupportedAlgorithm.new 'unsupported algorithm'
       end
     end
 
