@@ -3,5 +3,4 @@ require 'dir_manifest/digester'
 require 'dir_manifest/errors'
 require 'dir_manifest/verifier'
 
-module DirManifest
-end
+module DirManifest; end

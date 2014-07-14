@@ -7,10 +7,9 @@ module DirManifest
     attr_reader :path
 
     def initialize(path)
-      path = File.expand_path path
       raise NoSuchDirectory.new "could not find #{path}" unless File.exists?(path)
       raise NotADirectory.new "#{path} is not a directory" unless File.directory?(path)
-      @path = path
+      @path = File.expand_path path
     end
 
     def write_digest
